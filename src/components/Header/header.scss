@@ -1,0 +1,57 @@
+
+
+
+.header{
+  &__nav{
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+
+
+
+  }
+  &__logo{
+    min-width: 20%;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    background-color: #bcbcbc;
+    justify-content: center;
+    -webkit-box-shadow: -3px 5px 10px 3px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: -3px 5px 10px 3px rgba(34, 60, 80, 0.2);
+    box-shadow: -3px 5px 10px 3px rgba(34, 60, 80, 0.2);
+    height: 60px;
+    border-radius: 2px;
+
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background: #eeeeee;
+    color: black;
+    height: 60px;
+    align-items: center;
+    column-gap: 55px;
+    border-radius: 2px;
+    position: center;
+
+
+
+    &__item {
+      font-family: 'Titillium Web', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+    }
+  }
+}
+
+.App{
+  background: #707070;
+  padding-top: 50px;
+
+}
