@@ -1,0 +1,19 @@
+.footer__container {
+  padding: 50px 70px;
+  background: #eeeeee;
+  box-shadow: 1px 1px 8px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.footer__block-info {
+  display: flex;
+  margin: 0 20px;
+  display: flex;
+  column-gap: 55px;
+}
+.footer__block {
+  width: 200px;
+  height: 200px;
+}
+
+/*# sourceMappingURL=footer.css.map */

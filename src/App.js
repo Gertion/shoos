@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import './style..scss'
 
 
+
 function App() {
     return (
         <div className="App">

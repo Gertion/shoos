@@ -1,0 +1,23 @@
+.footer{
+  &__container {
+    padding: 50px 70px;
+    background: #eeeeee;
+    box-shadow: 1px 1px 8px;
+    border-radius: 8px;
+    margin-top: 20px;
+
+  }
+
+  &__block-info {
+    display: flex;
+    margin: 0 20px;
+    display: flex;
+    column-gap: 55px;
+  }
+
+  &__block {
+    width: 200px;
+    height: 200px;
+
+  }
+}
