@@ -2,12 +2,14 @@ import React, {useState} from 'react';
 import './check.scss'
 import {products} from "../products";
 import Product from "./Product";
+import Popup from "../Popup/Popup";
 
 
 const Check = () => {
 
     const [count, setCount] = useState(1)
     const [search, setSearch] = useState('')
+
 let productFilterSearch =  products.filter((item) => item.title.toUpperCase().includes(search.toUpperCase())).length
   console.log(productFilterSearch)
     return (
@@ -21,6 +23,7 @@ let productFilterSearch =  products.filter((item) => item.title.toUpperCase().in
                                 setSearch(event.target.value)
                                 setCount(1)
                             }}/>
+                            <Popup/>
                             <a className="check__link" href='22'>
                                 see all >
                             </a>
@@ -48,9 +51,9 @@ let productFilterSearch =  products.filter((item) => item.title.toUpperCase().in
                             : 4 * count} из {productFilterSearch}
                     </span> : ''
                     }
-
                 </div>
             </div>
+
         </section>
     );
 };
