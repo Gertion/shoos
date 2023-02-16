@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './popup.scss'
 
-const Popup = ({}) => {
-    const [active, setActive] = useState(false)
+const Popup = ({active, setActive}) => {
+
 if (active){
     document.body.classList.add('active-overlay')
 } else {
@@ -13,8 +13,8 @@ if (active){
             <button className="btn-active" onClick={() => setActive(true)}>Add Form</button>
             {
                 active && (
-                    <div className="overlay" >
-                        <div className="overlay__popup">
+                    <div className="overlay" onClick={() => setActive(false)}>
+                        <div className="overlay__popup" onClick={e => e.stopPropagation()}>
                             <button onClick={() => setActive(false)} className="overlay__closeBtn">X</button>
                             <form className="overlay__form">
                                 <h2 className="overlay__title">Подача заявки</h2>

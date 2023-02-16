@@ -132,6 +132,10 @@ body.active-overlay {
   overflow-y: hidden;
 }
 
+.btn-active {
+  color: red;
+}
+
 .overlay {
   position: fixed;
   top: 0;

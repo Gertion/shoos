@@ -1,14 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './check.scss'
-import {products} from "../products";
 import Product from "./Product";
 import Popup from "../Popup/Popup";
+import axios from "axios";
 
 
 const Check = () => {
 
     const [count, setCount] = useState(1)
     const [search, setSearch] = useState('')
+    const [active, setActive] = useState(false)
+    const [products, setProduct] = useState([])
+
+useEffect(() => {
+    axios('http://localhost:8080/products')
+        .then(({data}) => setProduct(data))
+}, [])
+
 
 let productFilterSearch =  products.filter((item) => item.title.toUpperCase().includes(search.toUpperCase())).length
   console.log(productFilterSearch)
@@ -23,7 +31,7 @@ let productFilterSearch =  products.filter((item) => item.title.toUpperCase().in
                                 setSearch(event.target.value)
                                 setCount(1)
                             }}/>
-                            <Popup/>
+                            <Popup active={active} setActive={setActive}/>
                             <a className="check__link" href='22'>
                                 see all >
                             </a>
