@@ -11,14 +11,17 @@ const Check = () => {
     const [search, setSearch] = useState('')
     const [active, setActive] = useState(false)
     const [products, setProduct] = useState([])
-
-useEffect(() => {
+    const productFilterSearch =  products.filter((item) => item.title.toUpperCase().includes(search.toUpperCase())).length
+const getAllProducts = () =>{
     axios('http://localhost:8080/products')
-        .then(({data}) => setProduct(data))
+        .then(({data}) => setProduct(data.reverse()))
+}
+    useEffect(() => {
+        getAllProducts()
 }, [])
 
 
-let productFilterSearch =  products.filter((item) => item.title.toUpperCase().includes(search.toUpperCase())).length
+
   console.log(productFilterSearch)
     return (
         <section className="check">
@@ -31,12 +34,11 @@ let productFilterSearch =  products.filter((item) => item.title.toUpperCase().in
                                 setSearch(event.target.value)
                                 setCount(1)
                             }}/>
-                            <Popup active={active} setActive={setActive}/>
+                            <Popup getAllProducts={getAllProducts} active={active} setActive={setActive}/>
                             <a className="check__link" href='22'>
                                 see all >
                             </a>
                         </div>
-
                     </div>
                     <div className='check__row'>
                         {products.filter((item, index) => item.title.toUpperCase().includes(search.toUpperCase())).filter((item,index) => index < 4 * count).map((item) => (
@@ -54,7 +56,7 @@ let productFilterSearch =  products.filter((item) => item.title.toUpperCase().in
                                 type="button" onClick={() => {setCount(count + 1)}}> Показать еще</button>}
 
                     {
-                        productFilterSearch ? <span>Показано {count * 4 >= productFilterSearch
+                        productFilterSearch ? <span className="check__sum">Показано {count * 4 >= productFilterSearch
                             ? productFilterSearch
                             : 4 * count} из {productFilterSearch}
                     </span> : ''
