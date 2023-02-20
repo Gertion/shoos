@@ -1,13 +1,26 @@
 import React from 'react';
+import axios from "../axios";
 
 
-const Product = ({photo, title, price}) => {
+const Product = ({getAllProducts, item}) => {
+
+    const {photo, title, price, id} = item
+    const deleteProduct = () =>{
+        axios.delete(`/products/${id}`)
+            .then(() => getAllProducts()).catch(() => alert('Error! Product not removed'))
+    }
+
+
     return (
         <div className='check__card'>
-            <img className="check__card-img" src={photo} alt={title}/>
+            <img  className="check__card-img" src={photo} alt={title} width="180" height="180"/>
             <h3 className="check__card-title">{title}</h3>
             <p className="check__card-price">{price > 0 ? `$${price}.00` : `Free*`}</p>
-            <button style={{background: price <= 0 && 'orange'}} className='check__card-btn' type="button">{price > 0 ? 'Buy' : 'Apply'}</button>
+            <div className="check__card-btns">
+                <button style={{background: price <= 0 && 'orange'}} className='check__card-btn' type="button">{price > 0 ? 'Buy' : 'Apply'}</button>
+                <button onClick={() => deleteProduct()} style={{background:'red'}} className='check__card-btn' type="button">Delete</button>
+            </div>
+
         </div>
     );
 };

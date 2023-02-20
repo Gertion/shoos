@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './popup.scss'
-import axios from "axios";
+import axios from '../axios'
 
 
 
@@ -8,14 +8,16 @@ import axios from "axios";
 const Popup = ({getAllProducts,active, setActive}) => {
     const addProduct = (e) =>{
         e.preventDefault()
-        axios.post('http://localhost:8080/products/', {
-            photo: e.target[0].value,
-            title: e.target[1].value,
-            price: e.target[2].value,
+        axios.post('/products/', {
+            photo: e.target[1].value,
+            title: e.target[2].value,
+            price: e.target[3].value,
         }).then(()=> {
             getAllProducts()
+            alert("добавлено")
             setActive(false)
-        }).catch(() => alert('Error, you can not add product'))}
+        }).catch(() => alert('Error, you can not add product'))
+        }
 
 
         if (active){
@@ -30,21 +32,22 @@ const Popup = ({getAllProducts,active, setActive}) => {
                 active && (
                     <div className="overlay" onClick={() => setActive(false) }>
                         <div className="overlay__popup" onClick={e => e.stopPropagation()}>
-                            <button onClick={() => setActive(false)} className="overlay__closeBtn">X</button>
+
                             <form className="overlay__form" onSubmit={(e) => addProduct(e)}>
+                                <button className="overlay__closeBtn" onClick={() => setActive(false)}>X</button>
                                 <h2 className="overlay__title" >Создайте продукт</h2>
                                 <p className="overlay__subtext">Заполните форму ниже, чтобы добавить товар.</p>
                                 <label className="overlay__label" htmlFor="img">
-                                    <span className="overlay__label-text" >Фотография</span>
+                                    <span className="overlay__label-text" >Добавьте фотографию товара</span>
                                     <input required className="overlay__label-field" type="text" placeholder="Фотография/URL"/>
                                 </label>
                                 <label className="overlay__label" htmlFor="title">
-                                    <span className="overlay__label-text">Название</span>
+                                    <span className="overlay__label-text">Добавьте название товара</span>
                                     <input required className="overlay__label-field" type="tel" placeholder="Название продукта"/>
                                 </label>
                                 <label className="overlay__label" htmlFor="price">
-                                    <span className="overlay__label-text">Цена</span>
-                                    <input required className="overlay__label-field" type="text" placeholder="Цена"/>
+                                    <span className="overlay__label-text">Добавьте ценник товара</span>
+                                    <input required className="overlay__label-field" type="num" placeholder="Цена"/>
                                 </label>
                                 <button type="submit">Отправить</button>
                             </form>

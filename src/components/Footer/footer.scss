@@ -1,23 +1,53 @@
-.footer{
+.footer {
+
   &__container {
     padding: 50px 70px;
     background: #eeeeee;
     box-shadow: 1px 1px 8px;
     border-radius: 8px;
     margin-top: 20px;
-
   }
 
   &__block-info {
     display: flex;
-    margin: 0 20px;
-    display: flex;
-    column-gap: 55px;
+    column-gap: 44px;
+
   }
 
   &__block {
     width: 200px;
     height: 200px;
 
+    &-title{
+      margin-bottom: 14px;
+      font-family: 'Inter', sans-serif;
+    }
+    &-text{
+      font-family: 'Inter', sans-serif;
+      font-weight: bold;
+    }
+
+    &-url {
+      display: flex;
+      margin-top: 20px;
+      column-gap: 33px;
+      color: rgb(23, 83, 173);;
+    }
+
+    &-phone {
+      margin: 13px 0;
+    }
+
+    &-email {
+      font-size: 16px;
+    }
   }
+
+
+
+
+
+
+
+
 }

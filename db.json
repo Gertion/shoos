@@ -31,12 +31,6 @@
       "price": 100
     },
     {
-      "id": 6,
-      "photo": "./products/black.png",
-      "title": "Nike Air Max 90",
-      "price": 250
-    },
-    {
       "id": 7,
       "photo": "./products/green.png",
       "title": "Nike Air Max 555",
@@ -47,36 +41,6 @@
       "photo": "./products/white.png",
       "title": "Nike Air Max 1000",
       "price": 0
-    },
-    {
-      "id": 9,
-      "photo": "./products/white.png",
-      "title": "Nike Air Max 1000",
-      "price": 0
-    },
-    {
-      "photo": "https://c0.klipartz.com/pngpicture/410/238/sticker-png-sports-shoes-basketball-shoe-nike-lebron-soldier-11-lebron-shoes-white-outdoor-shoe-sneakers-sports-shoes-shoe-thumbnail.png",
-      "title": "Nike Lebron Soldier 11",
-      "price": "1999",
-      "id": 10
-    },
-    {
-      "photo": "https://e7.pngegg.com/pngimages/328/473/png-clipart-t-shirt-sports-fan-jersey-clothing-esports-t-shirt-tshirt-logo.png",
-      "title": "T-shirt green",
-      "price": "4200",
-      "id": 11
-    },
-    {
-      "photo": "w",
-      "title": "mmm",
-      "price": "0",
-      "id": 12
-    },
-    {
-      "photo": "faf",
-      "title": "ss",
-      "price": "0",
-      "id": 13
     }
   ]
 }

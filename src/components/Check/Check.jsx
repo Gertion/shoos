@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './check.scss'
 import Product from "./Product";
 import Popup from "../Popup/Popup";
-import axios from "axios";
+import axios from "../axios";
 
 
 const Check = () => {
@@ -13,16 +13,13 @@ const Check = () => {
     const [products, setProduct] = useState([])
     const productFilterSearch =  products.filter((item) => item.title.toUpperCase().includes(search.toUpperCase())).length
 const getAllProducts = () =>{
-    axios('http://localhost:8080/products')
+    axios('/products')
         .then(({data}) => setProduct(data.reverse()))
 }
     useEffect(() => {
         getAllProducts()
 }, [])
 
-
-
-  console.log(productFilterSearch)
     return (
         <section className="check">
             <div className='container'>
@@ -43,7 +40,7 @@ const getAllProducts = () =>{
                     <div className='check__row'>
                         {products.filter((item, index) => item.title.toUpperCase().includes(search.toUpperCase())).filter((item,index) => index < 4 * count).map((item) => (
                             <React.Fragment key={item.id}>
-                                <Product photo={item.photo} price={item.price} title={item.title}/>
+                                <Product getAllProducts={getAllProducts} item={item}/>
                             </React.Fragment>
                         ))}
                     </div>

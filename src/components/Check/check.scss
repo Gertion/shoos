@@ -1,7 +1,6 @@
 
 .check{
 
-
 &__content{
   padding: 50px 70px;
   background: #eeeeee;
@@ -56,6 +55,7 @@
       width: 100%;
       margin-bottom: 25px;
     }
+
     &-title{
       font-style: normal;
       font-size: 17px;
@@ -73,6 +73,10 @@
       color: #515759;
       margin: 5px 0 12px;
     }
+    &-btns{
+      display: flex;
+      column-gap: 15px;
+    }
     &-btn{
       background-color: #008CBA;
       padding: 3px 3px;
@@ -84,5 +88,6 @@
       font-size: 12px;
       cursor: pointer;
     }
+
   }
 }

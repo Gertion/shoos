@@ -8,7 +8,7 @@
 
 .container {
   max-width: 1300px;
-  padding: 0 30px;
+  padding: 0 350px;
   margin: 0 auto;
 }
 
@@ -76,6 +76,10 @@
   color: #515759;
   margin: 5px 0 12px;
 }
+.check__card-btns {
+  display: flex;
+  column-gap: 15px;
+}
 .check__card-btn {
   background-color: #008CBA;
   padding: 3px 3px;
@@ -116,7 +120,6 @@
   align-items: center;
   column-gap: 55px;
   border-radius: 2px;
-  position: center;
 }
 .header__list__item {
   font-family: "Titillium Web", sans-serif;
@@ -124,7 +127,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-  text-align: center;
 }
 
 .App {
@@ -168,8 +170,9 @@ body.active-overlay {
   padding: 3px;
   width: 33px;
   display: flex;
-  margin: 20px 25px;
-  border: 2px solid black;
+  float: right;
+  border: none;
+  font-size: 22px;
 }
 .overlay__form {
   padding: 10px 70px;
@@ -178,6 +181,7 @@ body.active-overlay {
   font-weight: bold;
 }
 .overlay__title {
+  float: left;
   font-size: 28px;
   line-height: 200%;
 }
@@ -196,7 +200,9 @@ body.active-overlay {
   color: darkslateblue;
 }
 .overlay__label-field {
+  padding: 5px 0;
   width: 250px;
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=style..css.map */
