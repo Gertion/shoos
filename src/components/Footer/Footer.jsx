@@ -5,12 +5,12 @@ import {FaTwitter} from 'react-icons/fa';
 import {BsInstagram} from 'react-icons/bs'
 
 
-const Footer = () => {
+const Footer = ({dark}) => {
 
     return (
         <footer className="footer">
             <div className="container">
-                <div className='footer__container'>
+                <div className='footer__container' style={{background: dark ? 'black' : '#eeeeee'}}>
                     <div className="footer__block-info">
                         <div className="footer__block">
                             <h2 className='footer__block-title'>Follow Us.</h2>

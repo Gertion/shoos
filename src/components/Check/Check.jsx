@@ -3,9 +3,10 @@ import './check.scss'
 import Product from "./Product";
 import Popup from "../Popup/Popup";
 import axios from "../axios";
+import {Switch} from "@mui/material";
 
 
-const Check = () => {
+const Check = ({dark, setDark}) => {
 
     const [count, setCount] = useState(1)
     const [search, setSearch] = useState('')
@@ -22,8 +23,9 @@ const getAllProducts = () =>{
 
     return (
         <section className="check">
-            <div className='container'>
-                <div className='check__content'>
+            <div className='container' >
+                <div className='check__content' style={{background: dark ? 'black' : '#eeeeee'}}>
+                    <Switch onChange={() => setDark(!dark)} size="small" />
                     <div className='check__top'>
                         <h2 className="check__title">Watch this!</h2>
                         <div className="check__right">

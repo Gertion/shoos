@@ -1,17 +1,21 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-text-decoration: none;
+  text-decoration: none;
   list-style-type: none;
 }
 
-.container{
+.container {
   max-width: 1300px;
   padding: 0 30px;
   margin: 0 auto;
 }
+.App{
+  background: #707070;
+  padding-top: 50px;
 
+}
 
 @import "./components/Check/check";
 @import "./components/Header/header";

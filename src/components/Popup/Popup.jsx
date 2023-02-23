@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './popup.scss'
 import axios from '../axios'
-
+import {toast} from 'react-toastify'
 
 
 
@@ -12,12 +12,15 @@ const Popup = ({getAllProducts,active, setActive}) => {
             photo: e.target[1].value,
             title: e.target[2].value,
             price: e.target[3].value,
-        }).then(()=> {
+        }).then(() => {
             getAllProducts()
-            alert("добавлено")
             setActive(false)
-        }).catch(() => alert('Error, you can not add product'))
-        }
+            toast.success('Product add in web')
+            e.target[1].value = ''
+            e.target[2].value = ''
+            e.target[3].value = ''
+        }).catch(() => toast.error('Error, you can not add product'))
+    }
 
 
         if (active){

@@ -1,13 +1,16 @@
 import React from 'react';
 import axios from "../axios";
-
+import {toast} from 'react-toastify'
 
 const Product = ({getAllProducts, item}) => {
 
     const {photo, title, price, id} = item
     const deleteProduct = () =>{
         axios.delete(`/products/${id}`)
-            .then(() => getAllProducts()).catch(() => alert('Error! Product not removed'))
+            .then(() => {
+                getAllProducts()
+                toast.success('Product successfully is deleted')
+            }).catch(() => toast.error('Error! Product not removed'))
     }
 
 
