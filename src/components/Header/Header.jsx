@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './header.scss'
 import {GiClothes} from 'react-icons/gi'
 
 const Header = ({dark}) => {
+    const [active, setActive] = useState(false)
     return (
         <header className="header">
             <div className="container">
@@ -16,6 +17,7 @@ const Header = ({dark}) => {
                             <li className="header__item">Workout</li>
                             <li className="header__item">Activity</li>
                             <li className="header__item">Connect</li>
+                            <li className="header__item" onClick={() => setActive(true)}>open basket</li>
                         </ul>
                 </nav>
             </div>

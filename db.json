@@ -41,6 +41,24 @@
       "photo": "./products/white.png",
       "title": "Nike Air Max 1000",
       "price": 0
+    },
+    {
+      "photo": "wa",
+      "title": "waf",
+      "price": "9999",
+      "id": 9
+    },
+    {
+      "photo": "wa",
+      "title": "wda",
+      "price": "623",
+      "id": 10
+    },
+    {
+      "photo": "wdad",
+      "title": "wd",
+      "price": "6432",
+      "id": 11
     }
   ]
 }

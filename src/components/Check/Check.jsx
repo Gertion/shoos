@@ -4,6 +4,7 @@ import Product from "./Product";
 import Popup from "../Popup/Popup";
 import axios from "../axios";
 import {Switch} from "@mui/material";
+import Select from '../UI/Select/Select'
 
 
 const Check = ({dark, setDark}) => {
@@ -12,8 +13,14 @@ const Check = ({dark, setDark}) => {
     const [search, setSearch] = useState('')
     const [active, setActive] = useState(false)
     const [products, setProduct] = useState([])
+    const [sort, setSort] = useState('')
+
+
     const productFilterSearch =  products.filter((item) => item.title.toUpperCase().includes(search.toUpperCase())).length
-const getAllProducts = () =>{
+
+
+
+    const getAllProducts = () =>{
     axios('/products')
         .then(({data}) => setProduct(data.reverse()))
 }
@@ -29,6 +36,7 @@ const getAllProducts = () =>{
                     <div className='check__top'>
                         <h2 className="check__title">Watch this!</h2>
                         <div className="check__right">
+                            <Select setSort={setSort}/>
                             <input value={search} className="check__search" type="search" onChange={(event) => {
                                 setSearch(event.target.value)
                                 setCount(1)
@@ -40,7 +48,15 @@ const getAllProducts = () =>{
                         </div>
                     </div>
                     <div className='check__row'>
-                        {products.filter((item, index) => item.title.toUpperCase().includes(search.toUpperCase())).filter((item,index) => index < 4 * count).map((item) => (
+                        {products.sort((a, b) => {
+                                if (sort === 'small') {
+                                    return a.price - b.price
+                                }
+                                if (sort === 'big') {
+                                    return b.price - a.price
+                                }
+                            }
+                        ).filter((item, index) => item.title.toUpperCase().includes(search.toUpperCase())).filter((item,index) => index < 4 * count).map((item) => (
                             <React.Fragment key={item.id}>
                                 <Product getAllProducts={getAllProducts} item={item}/>
                             </React.Fragment>
