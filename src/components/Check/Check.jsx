@@ -7,7 +7,7 @@ import {Switch} from "@mui/material";
 import Select from '../UI/Select/Select'
 
 
-const Check = ({dark, setDark}) => {
+const Check = ({dark, setDark, basket, setBasket}) => {
 
     const [count, setCount] = useState(1)
     const [search, setSearch] = useState('')
@@ -48,6 +48,7 @@ const Check = ({dark, setDark}) => {
                         </div>
                     </div>
                     <div className='check__row'>
+                        {/*СОРТИРОВКА*/}
                         {products.sort((a, b) => {
                                 if (sort === 'small') {
                                     return a.price - b.price
@@ -58,7 +59,7 @@ const Check = ({dark, setDark}) => {
                             }
                         ).filter((item, index) => item.title.toUpperCase().includes(search.toUpperCase())).filter((item,index) => index < 4 * count).map((item) => (
                             <React.Fragment key={item.id}>
-                                <Product getAllProducts={getAllProducts} item={item}/>
+                                <Product basket={basket} setBasket={setBasket} getAllProducts={getAllProducts} item={item}/>
                             </React.Fragment>
                         ))}
                     </div>

@@ -1,3 +1,104 @@
+body.active-overlay2 {
+  overflow-y: hidden;
+}
 
+.overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 83, 173, 0.5647058824);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.overlay2__popup {
+  position: fixed;
+  top: 0;
+  background: #eeeeee;
+  -webkit-box-shadow: 0px -5px 5px -5px rgba(255, 255, 255, 0.6) inset;
+  -moz-box-shadow: 0px -5px 5px -5px rgba(255, 255, 255, 0.6) inset;
+  box-shadow: 0px -5px 5px -5px rgba(255, 255, 255, 0.6) inset;
+  border-radius: 10px;
+}
+.overlay2__closeBtn {
+  justify-content: center;
+  padding: 3px;
+  width: 33px;
+  display: flex;
+  float: right;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+.overlay2__form {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+.overlay2__title {
+  margin-left: 20px;
+  font-size: 28px;
+}
+.overlay2__row {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow: scroll;
+}
+.overlay2__card {
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+  border: 1px rgba(0, 0, 0, 0.1254901961) solid;
+  align-items: center;
+  padding: 30px;
+  border-radius: 20px;
+}
+.overlay2__info {
+  text-align: center;
+}
+.overlay2__info-price {
+  font-weight: 500;
+}
+.overlay2__btn {
+  cursor: pointer;
+  border: 1px rgba(0, 0, 0, 0.1254901961) solid;
+  font-size: 20px;
+  padding: 3px 5px;
+}
+.overlay2__total-info {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+  justify-content: space-between;
+  border: 1px rgba(0, 0, 0, 0.1254901961) solid;
+  margin: 5px;
+}
+.overlay2__total-btn {
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  align-items: center;
+  border: none;
+  border-radius: 5%;
+  background-color: coral;
+  color: black;
+  padding: 20px 50px;
+}
+.overlay2__inputs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.overlay2__input {
+  width: 100%;
+  height: 40px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
 
 /*# sourceMappingURL=basket.css.map */

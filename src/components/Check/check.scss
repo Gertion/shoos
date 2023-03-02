@@ -87,6 +87,9 @@
       font-weight: 700;
       font-size: 12px;
       cursor: pointer;
+      &:disabled{
+        background: green;
+      }
     }
 
   }

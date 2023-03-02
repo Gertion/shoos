@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import './header.scss'
 import {GiClothes} from 'react-icons/gi'
+import Basket from "../Basket/Basket";
+import {toast} from 'react-toastify'
 
-const Header = ({dark}) => {
+const Header = ({dark, setBasket, basket}) => {
     const [active, setActive] = useState(false)
     return (
         <header className="header">
@@ -17,8 +19,16 @@ const Header = ({dark}) => {
                             <li className="header__item">Workout</li>
                             <li className="header__item">Activity</li>
                             <li className="header__item">Connect</li>
-                            <li className="header__item" onClick={() => setActive(true)}>open basket</li>
+                            <li className="header__item"  style={{cursor: 'pointer'}} onClick={() => {
+                                if (basket.length> 0){
+                                    setActive(true)
+                                }
+                                else {
+                                    toast.error('You have not added an item to your cart')
+                                }
+                            }}>shopping cart {basket.length > 0 ? basket.length : ''}</li>
                         </ul>
+                    <Basket setBasket={setBasket} basket={basket} active={active} setActive={setActive}/>
                 </nav>
             </div>
         </header>
